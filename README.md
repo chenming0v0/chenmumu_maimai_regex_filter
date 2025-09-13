@@ -7,6 +7,8 @@
 链接:https://github.com/MoFox-Studio/MoFox_Bot
 
 ## 作用示例
+
+```
 [[rules.replace_rules]]
 pattern = "<content>([\\s\\S]*?)</content>"
 replacement = "\\1"
@@ -34,6 +36,8 @@ description = "删除logicpass标签及其内容"
 诶辰林你突然加这个正则规则干嘛呀～不过既然是你加的肯定有用对吧 (๑•̀ㅂ•́)و✧
 
 下面全是ai写的文档,自己看，看不懂就受着
+```
+
 ## 概述
 
 RegexFilter是一个专业的MaiBot消息处理插件，使用正则表达式对LLM回复进行智能过滤和格式化处理。支持替换、删除、添加等多种处理模式，让你的机器人回复更加符合预期。
@@ -273,5 +277,6 @@ description = "删除日期标记如[2024-01-01]"
 
 
 ## by - chengming0v0 and 克4.1op
+
 
 
