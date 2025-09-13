@@ -1,0 +1,70 @@
+{
+  "manifest_version": 1,
+  "name": "RegexFilter 正则过滤插件",
+  "version": "1.0.0",
+  "description": "一个使用正则表达式处理LLM消息的MaiBot插件，可以对LLM回复进行替换、删除、增添等操作。",
+  "author": {
+    "name": "MaiBot Developer"
+  },
+  "license": "MIT",
+  "keywords": [
+    "regex",
+    "filter",
+    "message",
+    "processing"
+  ],
+  "categories": [
+    "utility",
+    "filter"
+  ],
+  "host_application": {
+    "name": "MaiBot",
+    "min_version": "0.10.0"
+  },
+  "entry_points": {
+    "main": "plugin.py"
+  },
+  "plugin_info": {
+    "is_built_in": false,
+    "plugin_type": "utility",
+    "components": [
+      {
+        "type": "event_handler",
+        "name": "regex_message_filter",
+        "description": "拦截并处理LLM消息的事件处理器"
+      },
+      {
+        "type": "command",
+        "name": "regex_list",
+        "description": "显示当前所有正则规则"
+      },
+      {
+        "type": "command",
+        "name": "regex_add",
+        "description": "添加新的正则规则"
+      },
+      {
+        "type": "command",
+        "name": "regex_remove",
+        "description": "删除指定的正则规则"
+      },
+      {
+        "type": "command",
+        "name": "regex_toggle",
+        "description": "切换插件启用/禁用状态"
+      },
+      {
+        "type": "command",
+        "name": "regex_test",
+        "description": "测试正则规则对指定文本的效果"
+      }
+    ],
+    "features": [
+      "拦截并处理LLM回复消息",
+      "支持正则表达式替换和删除",
+      "命令行管理规则",
+      "规则测试功能",
+      "可配置的过滤规则"
+    ]
+  }
+}

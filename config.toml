@@ -1,0 +1,85 @@
+# regex_filter_plugin - 自动生成的配置文件
+# 一个使用正则表达式处理LLM消息的MaiBot插件，可以对LLM回复进行替换、删除、增添等操作。
+
+# 插件基本配置
+[plugin]
+
+# 是否启用插件
+enabled = true
+
+# 配置文件版本
+config_version = "1.0.0"
+
+
+# 正则过滤规则配置
+[rules]
+
+# 替换规则列表
+[[rules.replace_rules]]
+pattern = "不可以"
+replacement = "可以"
+enabled = true
+ignore_case = false
+multiline = false
+description = "将'不可以'替换为'可以'"
+
+[[rules.replace_rules]]
+pattern = "(糟糕|坏|不好)"
+replacement = "好"
+enabled = true
+ignore_case = false
+multiline = false
+description = "将负面词汇替换为'好'"
+
+[[rules.replace_rules]]
+pattern = "<content>([\\s\\S]*?)</content>"
+replacement = "\\1"
+enabled = true
+ignore_case = false
+multiline = true
+description = "提取content标签中的内容，去掉标签"
+
+# 删除规则列表
+[[rules.delete_rules]]
+pattern = "问题"
+enabled = true
+ignore_case = false
+multiline = false
+description = "删除所有'问题'字样"
+
+[[rules.delete_rules]]
+pattern = "<logicpass>[\\s\\S]*?</logicpass>\\n?"
+enabled = true
+ignore_case = false
+multiline = true
+description = "删除logicpass标签及其内容"
+
+[[rules.delete_rules]]
+pattern = "<!--.*-->"
+enabled = true
+ignore_case = false
+multiline = false
+description = "删除'<!--.*-->'"
+
+[[rules.delete_rules]]
+pattern = "<!-- count:[\\s\\S]*?-->"
+enabled = true
+ignore_case = false
+multiline = true
+description = "删除字数统计注释"
+
+[[rules.delete_rules]]
+pattern = "<content>"
+enabled = true
+ignore_case = false
+multiline = false
+description = "删除'<content>'"
+
+# 高级设置
+[advanced]
+
+# 最大处理内容长度
+max_content_length = 10000
+
+# 是否记录更改日志
+log_changes = true
