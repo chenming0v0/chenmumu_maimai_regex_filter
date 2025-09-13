@@ -5,6 +5,34 @@
 如果这个插件很难用,就受着我不会有任何的更新了,我厌倦了麦麦了抱歉，再见
 我第一天写代码，有问题就受着，至少我在用的时后能正确使用主播使用的时候是2025年9月12日的MoFox_Bot的master
 链接:https://github.com/MoFox-Studio/MoFox_Bot
+
+## 作用示例
+[[rules.replace_rules]]
+pattern = "<content>([\\s\\S]*?)</content>"
+replacement = "\\1"
+enabled = true
+ignore_case = false
+multiline = true
+description = "提取content标签中的内容，去掉标签"
+
+[[rules.delete_rules]]
+pattern = "<logicpass>[\\s\\S]*?</logicpass>\\n?"
+enabled = true
+ignore_case = false
+multiline = true
+description = "删除logicpass标签及其内容"
+
+应用前:
+<logicpass>
+1.xxxx
+2.xxxx
+</logicpass>
+<content>
+诶辰林你突然加这个正则规则干嘛呀～不过既然是你加的肯定有用对吧 (๑•̀ㅂ•́)و✧
+</content>
+应用后:
+诶辰林你突然加这个正则规则干嘛呀～不过既然是你加的肯定有用对吧 (๑•̀ㅂ•́)و✧
+
 下面全是ai写的文档,自己看，看不懂就受着
 ## 概述
 
@@ -245,4 +273,5 @@ description = "删除日期标记如[2024-01-01]"
 
 
 ## by - chengming0v0 and 克4.1op
+
 
